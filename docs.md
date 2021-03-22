@@ -70,6 +70,10 @@ A number of key bindings have been supplied to make text editing and string mani
 	CTRL+T                     swap character at cursor with previous character.
 	CTRL+H                     equivalent to backspace.
 
+## New to IRC
+
+Learning a new tool or protocol can be intimidating! Check out the [Beginner's Guide]({{ site.url }}/howto.html) to walk you through some of the basics and get you up and running.
+
 ## Transport Layer Security Support
 
 There is no native TLS/SSL support. Instead, users can achieve this functionality by using third-party utilities (e.g. stunnel, socat, ghosttunnel, etc).

@@ -9,15 +9,15 @@ kirc (KISS for IRC) is a tiny open-source Internet Relay Chat (IRC) client desig
 
 ## Features
 
-*   No dependencies other than a C99 compiler.
-*   Simple Authentication and Security Layer (SASL) procotol support.
-*   Client-to-client protocol (CTCP) support.
-*   Transport Layer Security (TLS) protocol support (via external utilities).
-*   Simple chat history logging.
-*   Asynchronous message handling.
-*   Multi-channel joining at server connection.
-*   Full support for all RFC 2812 commands.
-*   Easy customized color scheme definition.
+* No dependencies other than a C99 compiler.
+* Simple Authentication and Security Layer (SASL) procotol support.
+* Client-to-client (CTCP) protocol support.
+* Transport Layer Security (TLS) protocol support (via external utilities).
+* Simple chat history logging.
+* Asynchronous message handling.
+* Multi-channel joining at server connection.
+* Full support for all RFC 2812 commands.
+* Easy customized color scheme definition.
 
 ## Getting Started
 

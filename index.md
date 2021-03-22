@@ -3,9 +3,9 @@ layout: default
 title: home
 ---
 
-# kirc
+# What is kirc?
 
-A tiny open-source Internet Relay Chat (IRC) client designed with usability and cross-platform compatibility in mind. 
+kirc (KISS for IRC) is a tiny open-source Internet Relay Chat (IRC) client designed with usability and cross-platform compatibility in mind. 
 
 ## Features
 
@@ -31,9 +31,9 @@ Learning a new tool or protocol can be intimidating! Check out the [Beginner's G
 
 Please check [GitHub](https://github.com/mcpcpc/kirc/issues) for existing issues. 
 
-## Enhancement Request
+## Enhancement Requests
 
-Create a new [Pull Request](https://github.com/mcpcpc/kirc/pulls) or create a new [Feature Request](https://github.com/mcpcpc/kirc/issues/new?assignees=&labels=&template=feature_request.md&title=).
+Create a [Pull Request](https://github.com/mcpcpc/kirc/pulls).
 
 ## Contact
 

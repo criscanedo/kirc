@@ -86,7 +86,7 @@ An example using `socat`. Remember to replace items enclosed with `<>`.
 
 Similar to the TLS example, we can use third-party utilities, such as stunnel or socat, to connect to a proxy server.
 
-	socat tcp-listen:6667,fork,reuseaddr,bind=127.0.0.1 proxy:<proxyurl>:irc.freenode.org:6667;,proxyport=<proxyport>
+	socat tcp-listen:6667,fork,reuseaddr,bind=127.0.0.1 proxy:<proxyurl>:irc.freenode.org:6667,proxyport=<proxyport>
 	kirc -s 127.0.0.1 -c 'channel' -n 'name' -r 'realname'
 
 ## SASL PLAIN Authentication

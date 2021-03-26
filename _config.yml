@@ -2,3 +2,7 @@ url: http://kirc.io
 
 gems:
   - jekyll-feed
+  - jekyll-sitemap
+
+whitelist:
+  - jekyll-sitemap

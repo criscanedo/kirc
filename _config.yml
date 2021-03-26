@@ -1,5 +1,4 @@
 url: http://kirc.io
 
 gems:
-  - jekyll-sitemap
   - jekyll-feed

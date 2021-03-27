@@ -46,7 +46,7 @@ Consult `man kirc` for a full list and explanation of available arguments.
 
 	kirc [-s server] [-p port] [-n nick] [-c chan] ...
 
-## Command Aliases
+### Command Aliases
 
 	<message>                  Send a PRIVMSG to the current channel.
 	@<channel|nick> <message>  Send a message to a specified channel or nick.
@@ -54,7 +54,7 @@ Consult `man kirc` for a full list and explanation of available arguments.
 	/<command>                 Send command to IRC server (see RFC 2812 for full list).
 	/#<channel>                Assign new default message channel.
 
-## Key Bindings
+### Key Bindings
 
 A number of key bindings have been supplied to make text editing and string manipulation a breeze! 
 

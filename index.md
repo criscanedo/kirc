@@ -3,7 +3,7 @@ layout: default
 title: home
 ---
 
-# kirc - KISS for IRC
+# kirc ~ KISS for IRC
 
 A tiny open-source Internet Relay Chat (IRC) client designed with usability and cross-platform compatibility in mind. 
 

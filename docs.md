@@ -13,6 +13,7 @@ New to IRC? Learning a new tool or protocol can be intimidating! Check out the [
 - [Usage](#usage)
 - [Command Aliases](#command-aliases)
 - [Key Bindings](#key-bindings)
+- [Server Commands At Launch](#server-commands-at-launch)
 - [Transport Layer Security Support](#transport-layer-security-support)
 - [SASL PLAIN Authentication](#sasl-plain-authentication)
 - [SASL EXTERNAL Authentication](#sasl-external-authentication)
@@ -72,6 +73,16 @@ A number of key bindings have been supplied to make text editing and string mani
 	CTRL+T                     swap character at cursor with previous character.
 	CTRL+H                     equivalent to backspace.
 
+## Server Commands At Launch
+
+In some instances, it may beneficial to pass additional server commands at the command line.  For this, the `-x` argument is especially useful as it sends additional commands after nick identification (but prior to joining channels or the main event-handler actions). 
+
+For instance, to log into a Freenode server account at the time of connection, one could pass the appropriate 'Identify' command:
+
+	kirc -n '<nickname>' -x 'privmsg NickServ :identify <username> <password>'
+	
+Note that supplying a password in this manner (e.g. plain-text) is not advisable on public systems or those with shared resources/accounts.
+
 ## Transport Layer Security Support
 
 There is no native TLS/SSL support. Instead, users can achieve this functionality by using third-party utilities (e.g. stunnel, socat, ghosttunnel, etc).
@@ -79,7 +90,7 @@ There is no native TLS/SSL support. Instead, users can achieve this functionalit
 An example using `socat`. Remember to replace items enclosed with `<>`.
 
 	socat tcp-listen:6667,reuseaddr,fork,bind=127.0.0.1 ssl:<irc-server>:6697
-	kirc -s 127.0.0.1 -c 'channel' -n 'name' -r 'realname'
+	kirc -s 127.0.0.1 -c '<channel>' -n '<nickname>' -r '<realname>'
 
 
 ## HTTP/HTTPS Proxy Support
@@ -87,7 +98,7 @@ An example using `socat`. Remember to replace items enclosed with `<>`.
 Similar to the TLS example, we can use third-party utilities, such as stunnel or socat, to connect to a proxy server.
 
 	socat tcp-listen:6667,fork,reuseaddr,bind=127.0.0.1 proxy:<proxyurl>:irc.freenode.org:6667,proxyport=<proxyport>
-	kirc -s 127.0.0.1 -p 6667 -c <channel> -n <name> -r <realname>
+	kirc -s 127.0.0.1 -p 6667 -c '<channel>' -n '<name>' -r '<realname>'
 
 ## SASL PLAIN Authentication
 

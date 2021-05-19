@@ -77,7 +77,7 @@ A number of key bindings have been supplied to make text editing and string mani
 
 In some instances, it may beneficial to pass additional server commands at the command line.  For this, the `-x` argument is especially useful as it sends additional commands after nick identification (but prior to joining channels or the main event-handler actions). 
 
-For instance, to log into a Freenode server account at the time of connection, one could pass the appropriate 'Identify' command:
+For instance, to log into a libera.chat server account at the time of connection, one could pass the appropriate 'Identify' command:
 
 	kirc -n '<nickname>' -x 'privmsg NickServ :identify <username> <password>'
 	
@@ -97,7 +97,7 @@ An example using `socat`. Remember to replace items enclosed with `<>`.
 
 Similar to the TLS example, we can use third-party utilities, such as stunnel or socat, to connect to a proxy server.
 
-	socat tcp-listen:6667,fork,reuseaddr,bind=127.0.0.1 proxy:<proxyurl>:irc.freenode.org:6667,proxyport=<proxyport>
+	socat tcp-listen:6667,fork,reuseaddr,bind=127.0.0.1 proxy:<proxyurl>:irc.libera.chat:6667,proxyport=<proxyport>
 	kirc -s 127.0.0.1 -p 6667 -c '<channel>' -n '<nickname>' -r '<realname>'
 
 ## SASL PLAIN Authentication

@@ -72,7 +72,7 @@ Lets say I wanted to send “Hello World!” as a private message to the __#kirc
 
 Remember how i said aliases were _bad_ in the Introduction? Well, who wants to type “PRIVMSG” with the channel name every time you want to send a message! Luckily, _kirc_ does contain few aliases to make life easier. It also remembers a “default” message channel, so you don’t have to type it in every time.
 
-*   To update the current saved message channel, type `\#<channel>` and press the _RETURN_ or _ENTER_ key. Remember to replace `<channel>` with the name of the channel you would like to send private messages to by default.
+*   To update the current saved message channel, type `/#<channel>` and press the _RETURN_ or _ENTER_ key. Remember to replace `<channel>` with the name of the channel you would like to send private messages to by default.
 *   To use the private message alias, simply type your message and press the _RETURN_ or _ENTER_ key!
 
 ## Learning More Commands
@@ -80,15 +80,15 @@ Remember how i said aliases were _bad_ in the Introduction? Well, who wants to t
 Like any new tool or language, it takes time a practice to be become proficient.  It also never hurts to ask for help. Luckily, most IRC servers have a built-in “help” function, which can be accessed with the following command:
 
 ```
-\HELP
+/HELP
 ```
 
 This should print a list of available server commands to your console.  In order to enquire on the usage of a specific command, you simply “append” the command name after _HELP_.  
 
-For example, if i wanted to learn about the `\NAMES` Function, I could type:
+For example, if i wanted to learn about the `/NAMES` Function, I could type:
 
 ```
-\HELP NAMES
+/HELP NAMES
 ```
 
 ## Summary

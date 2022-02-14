@@ -23,6 +23,7 @@
 #define CHA_MAX 200
 #define NIC_MAX 26
 #define HIS_MAX 100
+#define CMD_MAX 100
 
 static char  cdef[MSG_MAX] = "?";       /* default PRIVMSG channel */
 static int   conn;                      /* connection socket */
@@ -910,6 +911,50 @@ static void handleUserInput(struct State *l) {
 	}
 }
 
+static void sendCommands() {
+	if (!inic) return;
+
+	char cmd[MSG_MAX], d = ';';
+	int i = 0, j = 0, slen = strnlen(inic, (MSG_MAX + 1) * CMD_MAX);
+
+	while (j < slen) {
+		int delim = inic[j] == d;
+		int esc = delim && j + 1 < slen && inic[j + 1] == d;
+		if (i >= MSG_MAX && (!delim || esc)) {
+			fputs("additional command exceeds max message length\n", stderr);
+			i = 0;
+			/* retrieve a pointer to the next delimiter */
+			char *next = strchr(inic + j, d);
+			if (!next) {
+				break;
+			}
+			/* index of the next command is the current index plus difference
+			 * between the address of the next delimiter pointer and the current address
+			 * + 1 to skip over the delimiter itself
+			 */
+			j += next - &inic[j] + 1;
+		} else if (delim) {
+			/* if the delimiter found is escaped, append to cmd and advance j by 2,
+			 * otherwise send cmd to raw and reset i
+			 */
+			if (esc) {
+				cmd[i++] = inic[j];
+				j += 2;
+			} else {
+				cmd[i] = '\0';
+				raw("%s\r\n", cmd);
+				i = 0, j++;
+			}
+		} else {
+			cmd[i++] = inic[j++];
+		}
+	}
+	if (i > 0) {
+		cmd[i] = '\0';
+		raw("%s\r\n", cmd);
+	}
+}
+
 static void usage(void) {
 	fputs("kirc [-s host] [-p port] [-c channel] [-n nick] [-r realname] \
 [-u username] [-k password] [-a token] [-x command] [-o path] [-e] [-v] [-V]\n", stderr);
@@ -962,7 +1007,7 @@ int main(int argc, char **argv) {
 		raw("PASS %s\r\n", pass);
 	}
 	if (inic) {
-		raw("%s\r\n", inic);
+		sendCommands();
 	}
 	struct pollfd fds[2];
 	fds[0].fd = STDIN_FILENO;
